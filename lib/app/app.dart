@@ -1,3 +1,4 @@
+import 'package:advanced_flutter/presentation/resources/route_manager.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatefulWidget {
@@ -7,7 +8,6 @@ class MyApp extends StatefulWidget {
 
   factory MyApp() => instance;
 
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -15,6 +15,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.splashRoute,
+    );
   }
 }
